@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<task-list></task-list>',
+  template: 
+    `<div class="container">
+        <task-list>Loading...</task-list>
+      </div>
+    `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
