@@ -7,14 +7,19 @@ const taskSeed: string[] = ["Buy pants", "Get camera repaired", "File taxes"];
 @Component({
   selector: 'task-list',
   template: `
-    <div *ngFor="let task of tasks" >{{task.text}}</div>
+    <div class="list-group">
+      <task class="list-group-item list-group-item-action"
+            *ngFor="let task of tasks"
+            [task]="task">
+      </task>
+    </div>
   `,
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[];
 
-  constructor() { 
+  constructor() {
     this.tasks = [];
   }
 
