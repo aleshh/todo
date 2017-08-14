@@ -8,11 +8,14 @@ const taskSeed: string[] = ["Buy pants", "Get camera repaired", "File taxes"];
   selector: 'task-list',
   template: `
     <div class="list-group">
-      <task class="list-group-item list-group-item-action"
+      <task class="form-check list-group-item list-group-item-action"
             *ngFor="let task of tasks"
             [task]="task">
       </task>
     </div>
+    <task-form class="form-check list-group-item list-group-item-action"
+               (newTask)="addTask($event)">
+    </task-form>
   `,
   styleUrls: ['./task-list.component.css']
 })
@@ -28,6 +31,10 @@ export class TaskListComponent implements OnInit {
       this.tasks.push(new Task(taskSeed[i]));
     }
     console.log(this.tasks);
+  }
+
+  addTask(task) {
+    this.tasks.push(task);
   }
 
 }

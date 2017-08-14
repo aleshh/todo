@@ -5,7 +5,13 @@ import { Task } from '../task';
 @Component({
   selector: 'task',
   template: `
-        {{task.text}}
+  <div class="">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      {{task.text}}
+    </label>
+  </div>
+
   `,
   styleUrls: ['./task.component.css']
 })
