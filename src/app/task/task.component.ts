@@ -17,6 +17,7 @@ import { Task } from '../task';
 })
 export class TaskComponent implements OnInit {
   @Input() task: Task;
+  @Output() deleteTask = EventEmitter<Task>();
 
   constructor() { }
 
